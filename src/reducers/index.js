@@ -24,6 +24,7 @@ function reducer(state = initialState, action) {
             if (state.car.features.filter(obj => obj.id === action.payload.id).length === 0) {
                 return {
                     ...state,
+                    additionalPrice: state.additionalPrice + action.payload.price,
                     car: {
                         ...state.car,
                         features: [...state.car.features, action.payload]
@@ -36,6 +37,7 @@ function reducer(state = initialState, action) {
         case "REMOVE_FEATURE":
             return {
                 ...state,
+                additionalPrice: state.additionalPrice - action.payload.price,
                 car: {
                     ...state.car,
                     features: state.car.features.filter(obj => (obj.id !== action.payload.id))
