@@ -19,9 +19,9 @@ const AddedFeatures = props => {
     </div>
   );
 };
-const mapPropsToValues = state => {
+const mapStateToProps = state => {
   return {
     car: state.car
   }
 }
-export default connect(mapPropsToValues, {})(AddedFeatures);
+export default connect(mapStateToProps, {})(AddedFeatures);
